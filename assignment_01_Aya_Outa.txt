@@ -1,0 +1,85 @@
+# Exercise1
+
+def factorial():
+  fact = 1
+  number = int(input("Please Enter a number : "))
+  if number < 0 :
+    print("Please enter a positive number")
+  elif number == 0 :
+    print("Factorial of 0 is 1")
+  else:
+    for i in range (1, number+1):
+      fact *=i
+    print("Factorial of", number, "is ", fact)
+  
+factorial()
+
+##############################################################
+
+
+#Exercise2
+def Divisors():
+  n = int(input("Please enter a number : "))
+  list = []
+  for i in range (1, n+1):
+    if n%i == 0:
+      list.append(i)
+  print("The divisors of :", n, "are :", list)
+Divisors()
+
+###############################################################
+
+#Exercise3
+def reverseString():
+    string = input("Enter a string: ")
+    reversedstring = ""
+    for i in range(len(string)-1, -1, -1):
+        reversedstring += string[i]
+    return reversedstring
+  
+reversed = reverseString()
+print("Reversed string:", reversed)
+
+
+
+###############################################################
+
+
+#Exercise4
+
+
+def evennumbers():
+  list1 = str(input("Enter a list of numbers")).split()
+  list =  [int(num) for num in list1]
+  evenlist = []
+  for num in list:
+    if num%2 == 0 :
+      evenlist.append(num)
+  return evenlist
+result = evennumbers()
+print("The even list is : ", result)
+
+
+###############################################################
+
+
+#Exercise5
+
+def check_password_strength():
+    password = input("Enter your password: ")
+
+    if len(password) < 8:
+        return "Weak password"
+    if not any(char.isupper() for char in password):
+        return "Weak password"
+    if not any(char.islower() for char in password):
+        return "Weak password"
+    if not any(char.isdigit() for char in password):
+        return "Weak password"
+    special_chars = ['#', '?', '!', '$']
+    if not any(char in special_chars for char in password):
+        return "Weak password"
+    
+    return "Strong password"
+
+print(check_password_strength())
