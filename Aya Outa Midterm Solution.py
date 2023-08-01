@@ -70,7 +70,7 @@ def ChangePriority(SpecialList, ticket_id, priority):
 def RemoveTicket(SpecialList, ticket_id):
     for ticket_info in SpecialList:
         if ticket_info[0] == ticket_id:
-            tickets.remove(ticket_info)
+            SpecialList.remove(ticket_info)
             print("Done!")
             return
     print("Ticket not found.")
